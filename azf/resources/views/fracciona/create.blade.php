@@ -5,6 +5,9 @@
         {!! Form::select('state',$estados) !!}
     </div>
     <div class="form-group">
+        {!! Form::select('estate', ['L' => 'Large', 'S' => 'Small'], 'Seleccione' ,['class'=>'form-control']) !!}
+    </div>
+    <div class="form-group">
         {!! Form::label('Nombre del Fraccionamiento:') !!}
         {!! Form::text('nom_fracc',null,['class'=>'form-control','placeholder'=>'Ingresa el nombre del Fraccionamiento']) !!}
     </div>

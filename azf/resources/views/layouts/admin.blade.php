@@ -49,14 +49,11 @@
             <div class="container-fluid">
 
                 <div class="col-sm-4" style="background-color:lavender;">
+                    @yield('fraccion')
                 </div>
 
                 <div class="col-sm-4">
-
                     @yield('content')
-                </div>
-
-                <div class="col-sm-4" style="background-color:lavender;">
                 </div>
 
                 <div class="col-sm-4" style="background-color:lavender;">
