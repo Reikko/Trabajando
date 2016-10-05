@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::resource('usuario','UsuarioController');
 Route::resource('fr','FracControl');
 Route::resource('edo','EdoController');
+Route::resource('registro','Registro');
+Route::resource('cliente','ClienteControl');
