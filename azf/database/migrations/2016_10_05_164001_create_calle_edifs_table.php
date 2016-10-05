@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePropiedadesTable extends Migration
+class CreateCalleEdifsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,13 @@ class CreatePropiedadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('propiedades', function (Blueprint $table) {
+        Schema::create('calle_edifs', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name');
-            $table->string('direccion');
-
+            $table->integer('id_fra')->unsigned();
+            $table->foreign('id_fra')->references('id')->on('fraccs')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('nom_calle');
             $table->timestamps();
-
-            $table->integer('genre_id')->unsigned();
-            $table->foreign('genre_id')->references('id')->on('propietarios');
         });
     }
 
@@ -31,6 +29,6 @@ class CreatePropiedadesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('propiedades');
+        Schema::drop('calle_edifs');
     }
 }

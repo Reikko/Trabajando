@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePropietariosTable extends Migration
+class CreateColoniasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,12 @@ class CreatePropietariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('propietarios', function (Blueprint $table) {
+        Schema::create('colonias', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('prop');
+            $table->integer('id_edo')->unsigned();
+            $table->foreign('id_edo')->references('id')->on('edos')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('nom_col');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreatePropietariosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('propietarios');
+        Schema::drop('colonias');
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterProfilesTable extends Migration
+class CreateClientesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,18 @@ class AlterProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::table('propietarios', function (Blueprint $table) {
-            $table->string('id_usuario');
+        Schema::create('clientes', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->increments('id');
             $table->string('nombre');
             $table->string('ap_pat');
             $table->string('ap_mat');
             $table->string('tel');
+            $table->string('correo');
+            $table->string('usuario');
+            $table->string('contra');
             $table->string('priv');
-            $table->dropColumn('prop');
+            $table->timestamps();
         });
     }
 
@@ -30,8 +34,6 @@ class AlterProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::table('propietarios', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('clientes');
     }
 }

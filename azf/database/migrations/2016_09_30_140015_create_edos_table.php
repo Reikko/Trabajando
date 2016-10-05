@@ -18,6 +18,7 @@ class CreateEdosTable extends Migration
             $table->string('nom_edo');
             $table->timestamps();
         });
+
     }
 
     /**

@@ -15,9 +15,10 @@ class CreateFraccsTable extends Migration
         Schema::create('fraccs', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('nom_fracc');
-            $table->integer('edo_id')->unsigned();
-            $table->foreign('edo_id')->references('id')->on('edos')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('id_col')->unsigned();
+            $table->foreign('id_col')->references('id')->on('colonias')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('nom_frac');
+
             $table->timestamps();
         });
     }
