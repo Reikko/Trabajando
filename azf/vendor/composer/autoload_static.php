@@ -271,11 +271,14 @@ class ComposerStaticInit08209a722656b4e2bdbdfc4f5b9ce36e
     );
 
     public static $classMap = array (
-        'AlterProfilesTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_03_160618_alter_profiles_table.php',
+        'CreateCalleEdifsTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_05_164001_create_calle_edifs_table.php',
+        'CreateClientesTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_05_164900_create_clientes_table.php',
+        'CreateColoniasTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_140020_create_colonias_table.php',
         'CreateEdosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_140015_create_edos_table.php',
         'CreateFraccsTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_140047_create_fraccs_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePropiedadesTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_100956_create_propiedades_table.php',
+        'CreatePropiedadsTable' => __DIR__ . '/../..' . '/database/migrations/2016_10_05_165827_create_propiedads_table.php',
         'CreatePropietariosTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_30_101938_create_propietarios_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
