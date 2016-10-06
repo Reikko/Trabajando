@@ -9,15 +9,16 @@
 <?php $__env->startSection('content'); ?>
     <table class="table">
         <thead>
-        <th>Estado</th>
-        <th>Id</th>
-        <th>Nombre</th>
+        <th>ID</th>
+        <th>ID_COLONIA</th>
+        <th>NOMBRE</th>
+        <th>Datos</th>
         </thead>
         <?php foreach($fracs as $frac): ?>
             <tbody>
-            <td><?php echo e($frac->edo_id); ?></td>
             <td><?php echo e($frac->id); ?></td>
-            <td><?php echo e($frac->nom_fracc); ?></td>
+            <td><?php echo e($frac->id_col); ?></td>
+            <td><?php echo e($frac->nom_frac); ?></td>
             <td>
                 <?php echo link_to_route('fr.edit', $title = 'Editar', $parameters = $frac->id, $attributes = ['class'=>'btn btn-primary']); ?>
 

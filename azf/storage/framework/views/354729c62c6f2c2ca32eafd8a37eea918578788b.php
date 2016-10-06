@@ -34,8 +34,26 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="/">Cliente<span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><?php echo link_to_route('cliente.index', $title = 'Mostrar Clientes'); ?></li>
                             <li><?php echo link_to_route('cliente.create', $title = 'Crear Cliente'); ?></li>
-                            <li><?php echo link_to_route('cliente.index', $title = 'Mostrar Cliente'); ?></li>
+                            <li><a href="#">Page 1-2</a></li>
+                            <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/">Colonias<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><?php echo link_to_route('colonias.index', $title = 'Mostrar Colonia'); ?></li>
+                            <li><?php echo link_to_route('colonias.create', $title = 'Crear Colonia'); ?></li>
+                            <li><a href="#">Page 1-2</a></li>
+                            <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/">Fraccionamiento<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><?php echo link_to_route('fr.index', $title = 'Mostrar Fraccionamiento'); ?></li>
+                            <li><?php echo link_to_route('fr.create', $title = 'Crear Fraccionamiento'); ?></li>
                             <li><a href="#">Page 1-2</a></li>
                             <li><a href="#">Page 1-3</a></li>
                         </ul>
@@ -60,17 +78,17 @@
         <div id="entrar" class="tab-pane fade  in active">
             <div class="container-fluid">
 
-                <div class="col-sm-4" style="background-color:lavender;">
+                <div class="col-sm-3" style="background-color:lavender;">
                     <?php echo $__env->yieldContent('fraccion'); ?>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <?php echo $__env->yieldContent('content'); ?>
                     <?php echo Html::script('js/drop.js'); ?>
 
                 </div>
 
-                <div class="col-sm-4" style="background-color:lavender;">
+                <div class="col-sm-3" style="background-color:lavender;">
                 </div>
 
             </div>

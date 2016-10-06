@@ -10,15 +10,17 @@
     <table class="table">
         <thead>
         <th>Nombre</th>
+        <th>Telefono</th>
         <th>Correo</th>
         <th>Operacion</th>
         </thead>
         <?php foreach($clients as $client): ?>
             <tbody>
-            <td><?php echo e($client->nombre); ?></td>
-            <td><?php echo e($client->email); ?></td>
+            <td><?php echo e($client->nombre, $client->ap_pat); ?> <?php echo e($client->ap_pat); ?> <?php echo e($client->ap_mat); ?></td>
+            <td><?php echo e($client->tel); ?></td>
+            <td><?php echo e($client->correo); ?></td>
             <td>
-                <?php echo link_to_route('usuario.edit', $title = 'Editar', $parameters = $client->id, $attributes = ['class'=>'btn btn-primary']); ?>
+                <?php echo link_to_route('cliente.edit', $title = 'Editar', $parameters = $client->id, $attributes = ['class'=>'btn btn-primary']); ?>
 
             </td>
             </tbody>
