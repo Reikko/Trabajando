@@ -1,6 +1,7 @@
 <?php
 
 namespace azf\Http\Controllers;
+
 use Session;
 use Redirect;
 use azf\Edo;
@@ -9,7 +10,7 @@ use Illuminate\Http\Request;
 
 use azf\Http\Requests;
 
-class EdoController extends Controller
+class ColControll extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,17 +19,8 @@ class EdoController extends Controller
      */
     public function index()
     {
-        $estados = Edo::All();
-        return view('estado.index',compact('estados'));
-    }
-
-    public function getColonias(Request $request,$id)
-    {
-        if($request -> ajax())
-        {
-            $colons = Colonia::colonias($id);
-            return response()->json($colons);
-        }
+        $colonias = Colonia::All();
+        return view('col_carpet.index',compact('colonias'));
     }
 
     /**
@@ -38,7 +30,8 @@ class EdoController extends Controller
      */
     public function create()
     {
-        return view('estado.create');
+        $states = Edo::lists('nom_edo','id');
+        return view('col_carpet.create',compact('states'));
     }
 
     /**
@@ -49,10 +42,11 @@ class EdoController extends Controller
      */
     public function store(Request $request)
     {
-        Edo::create([
-            'nom_edo'=>$request['nom_edo'],
+        Colonia::create([
+            'id_edo'=>$request['id_edo'],
+            'nom_col'=>$request['nom_col'],
         ]);
-        return redirect('/edo')->with('message','Estado Creado Correctamente');
+        return redirect('/colonias')->with('message','Colonia Creada Correctamente');
     }
 
     /**
@@ -74,8 +68,9 @@ class EdoController extends Controller
      */
     public function edit($id)
     {
-        $est = Edo::find($id);
-        return view('estado.edit',['est'=>$est]);
+        $col = Colonia::find($id);
+        $states = Edo::lists('nom_edo','id');
+        return view('col_carpet.edit',['col'=>$col],compact('states'));
     }
 
     /**
@@ -87,11 +82,11 @@ class EdoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $edo = Edo::find($id);
-        $edo->fill($request->all());
-        $edo->save();
-        Session::flash('message','Estado Editado Correctamente');
-        return Redirect::to('/edo');
+        $col = Colonia::find($id);
+        $col->fill($request->all());
+        $col->save();
+        Session::flash('message','Colonia editada correctamente');
+        return Redirect::to('/colonias');
     }
 
     /**
@@ -102,14 +97,8 @@ class EdoController extends Controller
      */
     public function destroy($id)
     {
-        Edo::destroy($id);
-        Session::flash('message','Estado Eliminado Correctamente');
-        return Redirect::to('/edo');
-    }
-
-
-    public function towns($id)
-    {
-
+        Colonia::destroy($id);
+        Session::flash('message','Colonia eliminada correctamente');
+        return Redirect::to('/colonias');
     }
 }
