@@ -13,7 +13,6 @@
     <style type="text/css">
 
     </style>
-
 </head>
 <body>
 
@@ -30,7 +29,20 @@
                 <a class="navbar-brand" href="#">AZF</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Usuario</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/">Cliente<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><?php echo link_to_route('cliente.create', $title = 'Crear Cliente'); ?></li>
+                            <li><?php echo link_to_route('cliente.index', $title = 'Mostrar Cliente'); ?></li>
+                            <li><a href="#">Page 1-2</a></li>
+                            <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
                 <ul class="nav navbar-pills navbar-nav navbar-right">
                     <li ><a data-toggle="pill" href="#inicio">Inicio</a></li>
                     <li class = "active"><a data-toggle="pill" href="#entrar"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
@@ -54,6 +66,8 @@
 
                 <div class="col-sm-4">
                     <?php echo $__env->yieldContent('content'); ?>
+                    <?php echo Html::script('js/drop.js'); ?>
+
                 </div>
 
                 <div class="col-sm-4" style="background-color:lavender;">
@@ -76,6 +90,8 @@
 
 
 <!-- Latest compiled and minified JavaScript -->
+
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
