@@ -1,27 +1,24 @@
 @extends('layouts.admin')
-
 @if(Session::has('message'))
     <div class="alert alert-success alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         {{Session::get('message')}}
     </div>
 @endif
-
 @section('content')
     <table class="table">
         <thead>
-        <th>Nombre</th>
-        <th>Telefono</th>
-        <th>Correo</th>
-        <th>Operacion</th>
+        <th>ID</th>
+        <th>ID_Estado</th>
+        <th>Colonia</th>
         </thead>
-        @foreach($clients as $client)
+        @foreach($colonias as $coloni)
             <tbody>
-            <td>{{$client->nombre, $client->ap_pat}} {{ $client->ap_pat}} {{ $client->ap_mat}}</td>
-            <td>{{$client->tel}}</td>
-            <td>{{$client->correo}}</td>
+            <td>{{$coloni->id}}</td>
+            <td>{{$coloni->id_edo}}</td>
+            <td>{{$coloni->nom_col}}</td>
             <td>
-                {!!link_to_route('cliente.edit', $title = 'Editar', $parameters = $client->id, $attributes = ['class'=>'btn btn-primary'])!!}
+                {!!link_to_route('colonias.edit', $title = 'Editar', $parameters = $coloni->id, $attributes = ['class'=>'btn btn-primary'])!!}
             </td>
             </tbody>
         @endforeach

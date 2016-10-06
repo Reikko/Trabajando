@@ -21,5 +21,4 @@
             </tbody>
         @endforeach
     </table>
-
     @stop

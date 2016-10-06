@@ -9,15 +9,16 @@
 @section('content')
     <table class="table">
         <thead>
-        <th>Estado</th>
-        <th>Id</th>
-        <th>Nombre</th>
+        <th>ID</th>
+        <th>ID_COLONIA</th>
+        <th>NOMBRE</th>
+        <th>Datos</th>
         </thead>
         @foreach($fracs as $frac)
             <tbody>
-            <td>{{$frac->edo_id}}</td>
             <td>{{$frac->id}}</td>
-            <td>{{$frac->nom_fracc}}</td>
+            <td>{{$frac->id_col}}</td>
+            <td>{{$frac->nom_frac}}</td>
             <td>
                 {!!link_to_route('fr.edit', $title = 'Editar', $parameters = $frac->id, $attributes = ['class'=>'btn btn-primary'])!!}
             </td>
