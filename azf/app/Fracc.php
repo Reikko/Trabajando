@@ -7,9 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Fracc extends Model
 {
     protected $table = 'fraccs';
-    protected $fillable = [
-        'nom_fracc',
-        'edo_id',
-    ];
+    protected $fillable = [ 'id_col','nom_frac'];
 
 }
