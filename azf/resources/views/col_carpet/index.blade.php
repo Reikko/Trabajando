@@ -9,13 +9,13 @@
     <table class="table">
         <thead>
         <th>ID</th>
-        <th>ID_Estado</th>
+        <th>Estado</th>
         <th>Colonia</th>
         </thead>
         @foreach($colonias as $coloni)
             <tbody>
             <td>{{$coloni->id}}</td>
-            <td>{{$coloni->id_edo}}</td>
+            <td>{{$coloni->nom_edo}}</td>
             <td>{{$coloni->nom_col}}</td>
             <td>
                 {!!link_to_route('colonias.edit', $title = 'Editar', $parameters = $coloni->id, $attributes = ['class'=>'btn btn-primary'])!!}

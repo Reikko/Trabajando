@@ -30,16 +30,17 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Usuario</a></li>
+
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="/">Cliente<span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/">Estado<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li>{!!link_to_route('cliente.index', $title = 'Mostrar Clientes')!!}</li>
-                            <li>{!!link_to_route('cliente.create', $title = 'Crear Cliente')!!}</li>
+                            <li>{!!link_to_route('edo.index', $title = 'Mostrar Estados')!!}</li>
+                            <li>{!!link_to_route('edo.create', $title = 'Agregar Estado')!!}</li>
                             <li><a href="#">Page 1-2</a></li>
                             <li><a href="#">Page 1-3</a></li>
                         </ul>
                     </li>
+
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="/">Colonias<span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -58,13 +59,24 @@
                             <li><a href="#">Page 1-3</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/">Clientes<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>{!!link_to_route('cliente.index', $title = 'Mostrar Clientes')!!}</li>
+                            <li>{!!link_to_route('cliente.create', $title = 'Crear Cliente')!!}</li>
+                            <li><a href="#">Page 1-2</a></li>
+                            <li><a href="#">Page 1-3</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#">Page 2</a></li>
                     <li><a href="#">Page 3</a></li>
+
+
                 </ul>
                 <ul class="nav navbar-pills navbar-nav navbar-right">
                     <li ><a data-toggle="pill" href="#inicio">Inicio</a></li>
                     <li class = "active"><a data-toggle="pill" href="#entrar"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
-                    <!--<li><a data-toggle="pill" href="#alta"><span class="glyphicon glyphicon-user"></span> Registrarme</a></li>-->
+
                 </ul>
             </div>
         </div>
