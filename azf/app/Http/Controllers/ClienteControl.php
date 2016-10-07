@@ -48,7 +48,7 @@ class ClienteControl extends Controller
             'correo'=> $request['correo'],
             'contra'=> $request['contra'],
         ]);
-        return redirect('/cliente/create')->with('message','Usuario Creado Correctamente');
+        return redirect('/cliente')->with('message','Usuario Creado Correctamente');
     }
 
     /**
@@ -70,7 +70,8 @@ class ClienteControl extends Controller
      */
     public function edit($id)
     {
-        //
+        $cli = cliente::find($id);
+        return view('cliente.edit',['cli'=>$cli]);
     }
 
     /**
@@ -82,7 +83,11 @@ class ClienteControl extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cli = cliente::find($id);
+        $cli->fill($request->all());
+        $cli->save();
+        Session::flash('message','Cliente Editado');
+        return Redirect::to('/cliente');
     }
 
     /**
@@ -93,6 +98,8 @@ class ClienteControl extends Controller
      */
     public function destroy($id)
     {
-        //
+        cliente::destroy($id);
+        Session::flash('message','Cliente Eliminado');
+        return Redirect::to('/cliente');
     }
 }

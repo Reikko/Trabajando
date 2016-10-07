@@ -1,11 +1,13 @@
 <?php
 
 namespace azf\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use Session;
 use Redirect;
 use azf\Fracc;
 use azf\Edo;
 use azf\Colonia;
+use azf;
 use Illuminate\Http\Request;
 
 use azf\Http\Requests;
@@ -19,7 +21,11 @@ class FracControl extends Controller
      */
     public function index()
     {
-        $fracs = Fracc::All();
+        //$fracs = Fracc::All();
+        $fracs = DB::table('fraccs')
+            ->join('colonias', 'fraccs.id_col', '=', 'colonias.id')
+            ->select('fraccs.*', 'colonias.nom_col')
+            ->get();
         return view('fracciona.index',compact('fracs'));
     }
 
@@ -68,7 +74,6 @@ class FracControl extends Controller
      */
     public function edit($id)
     {
-
         $fr = Fracc::find($id);
         $col = Colonia::lists('nom_col','id');
         $est = Edo::lists('nom_edo','id');
@@ -83,7 +88,11 @@ class FracControl extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $fra = Fracc::find($id);
+        $fra->fill($request->all());
+        $fra->save();
+        Session::flash('message','Fraccionamiento Editado');
+        return Redirect::to('/fr');
     }
 
     /**
@@ -94,6 +103,8 @@ class FracControl extends Controller
      */
     public function destroy($id)
     {
-        //
+        Fracc::destroy($id);
+        Session::flash('message','Fraccionamiento eliminado');
+        return Redirect::to('/fr');
     }
 }

@@ -2,9 +2,11 @@
 
 namespace azf\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Session;
 use Redirect;
 use azf\Edo;
+use azf;
 use azf\Colonia;
 use Illuminate\Http\Request;
 
@@ -19,7 +21,10 @@ class ColControll extends Controller
      */
     public function index()
     {
-        $colonias = Colonia::All();
+        //$colonias = Colonia::All();
+
+        $colonias = DB::table('colonias')
+            ->join('edos', 'colonias.id_edo', '=', 'edos.id')->get();
         return view('col_carpet.index',compact('colonias'));
     }
 

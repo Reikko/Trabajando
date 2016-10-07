@@ -63,7 +63,8 @@ class EdoController extends Controller
      */
     public function show($id)
     {
-        //
+        $est = Edo::find($id);
+        return view('estado.mostrar',['est'=>$est]);
     }
 
     /**
