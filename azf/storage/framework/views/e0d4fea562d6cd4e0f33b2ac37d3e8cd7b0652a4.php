@@ -7,20 +7,25 @@
 <?php endif; ?>
 
 <?php $__env->startSection('content'); ?>
-    <table class="table">
+    <table class="table table-condensed table-hover">
         <thead>
         <th>ID</th>
-        <th>ID_COLONIA</th>
-        <th>NOMBRE</th>
-        <th>Datos</th>
+        <th>COLONIA</th>
+        <th>FRACCIONAMIENTO</th>
+        <th>Editar</th>
+        <th>Ver</th>
         </thead>
         <?php foreach($fracs as $frac): ?>
             <tbody>
             <td><?php echo e($frac->id); ?></td>
-            <td><?php echo e($frac->id_col); ?></td>
+            <td><?php echo e($frac->nom_col); ?></td>
             <td><?php echo e($frac->nom_frac); ?></td>
             <td>
                 <?php echo link_to_route('fr.edit', $title = 'Editar', $parameters = $frac->id, $attributes = ['class'=>'btn btn-primary']); ?>
+
+            </td>
+            <td>
+                <?php echo link_to_route('fr.show', $title = 'Ver', $parameters = $frac->id, $attributes = ['class'=>'btn btn-primary']); ?>
 
             </td>
             </tbody>

@@ -23,6 +23,13 @@
 
     <?php echo Form::close(); ?>
 
+
+    <?php echo Form::open(['route'=>['fr.destroy',$fr->id],'method'=>'DELETE']); ?>
+
+    <?php echo Form::submit('Eliminar',['class'=>'btn btn-danger']); ?>
+
+    <?php echo Form::close(); ?>
+
 <?php $__env->stopSection(); ?>
 
 

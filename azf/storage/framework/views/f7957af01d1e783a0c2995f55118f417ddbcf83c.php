@@ -10,6 +10,7 @@
         <thead>
         <th>Num</th>
         <th>Estado</th>
+        <th>Modificar</th>
         </thead>
         <?php foreach($estados as $estado): ?>
             <tbody>
