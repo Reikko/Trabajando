@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Menu</title>
     <!-- Latest compiled and minified CSS -->
-    {!! Html::style('assets/css/bootstrap.css') !!}
+    <?php echo Html::style('assets/css/bootstrap.css'); ?>
+
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
      Optional theme
@@ -36,8 +37,8 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="/">Estado<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li>{!!link_to_route('edo.index', $title = 'Mostrar Estados')!!}</li>
-                            <li>{!!link_to_route('edo.create', $title = 'Agregar Estado')!!}</li>
+                            <li><?php echo link_to_route('edo.index', $title = 'Mostrar Estados'); ?></li>
+                            <li><?php echo link_to_route('edo.create', $title = 'Agregar Estado'); ?></li>
                             <li><a href="#">Page 1-2</a></li>
                             <li><a href="#">Page 1-3</a></li>
                         </ul>
@@ -46,8 +47,8 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="/">Colonias<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li>{!!link_to_route('colonias.index', $title = 'Mostrar Colonia')!!}</li>
-                            <li>{!!link_to_route('colonias.create', $title = 'Crear Colonia')!!}</li>
+                            <li><?php echo link_to_route('colonias.index', $title = 'Mostrar Colonia'); ?></li>
+                            <li><?php echo link_to_route('colonias.create', $title = 'Crear Colonia'); ?></li>
                             <li><a href="#">Page 1-2</a></li>
                             <li><a href="#">Page 1-3</a></li>
                         </ul>
@@ -55,8 +56,8 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="/">Fraccionamiento<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li>{!!link_to_route('fr.index', $title = 'Mostrar Fraccionamiento')!!}</li>
-                            <li>{!!link_to_route('fr.create', $title = 'Crear Fraccionamiento')!!}</li>
+                            <li><?php echo link_to_route('fr.index', $title = 'Mostrar Fraccionamiento'); ?></li>
+                            <li><?php echo link_to_route('fr.create', $title = 'Crear Fraccionamiento'); ?></li>
                             <li><a href="#">Page 1-2</a></li>
                             <li><a href="#">Page 1-3</a></li>
                         </ul>
@@ -64,8 +65,8 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="/">Clientes<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li>{!!link_to_route('cliente.index', $title = 'Mostrar Clientes')!!}</li>
-                            <li>{!!link_to_route('cliente.create', $title = 'Crear Cliente')!!}</li>
+                            <li><?php echo link_to_route('cliente.index', $title = 'Mostrar Clientes'); ?></li>
+                            <li><?php echo link_to_route('cliente.create', $title = 'Crear Cliente'); ?></li>
                             <li><a href="#">Page 1-2</a></li>
                             <li><a href="#">Page 1-3</a></li>
                         </ul>
@@ -93,12 +94,13 @@
             <div class="container-fluid">
 
                 <div class="col-sm-3" style="background-color:lavender;">
-                    @yield('fraccion')
+                    <?php echo $__env->yieldContent('fraccion'); ?>
                 </div>
 
                 <div class="col-sm-6">
-                    @yield('content')
-                    {!!Html::script('js/drop.js')!!}
+                    <?php echo $__env->yieldContent('content'); ?>
+                    <?php echo Html::script('js/drop.js'); ?>
+
                 </div>
 
                 <div class="col-sm-3" style="background-color:lavender;">
