@@ -9,6 +9,7 @@
 <?php $__env->startSection('content'); ?>
     <table class="table">
         <thead>
+        <th>ID</th>
         <th>Nombre</th>
         <th>Telefono</th>
         <th>Correo</th>
@@ -16,6 +17,8 @@
         </thead>
         <?php foreach($clients as $client): ?>
             <tbody>
+            <td><?php echo e($client->id); ?></td>
+            
             <td><?php echo e($client->nombre, $client->ap_pat); ?> <?php echo e($client->ap_pat); ?> <?php echo e($client->ap_mat); ?></td>
             <td><?php echo e($client->tel); ?></td>
             <td><?php echo e($client->correo); ?></td>

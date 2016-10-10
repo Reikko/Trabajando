@@ -10,6 +10,7 @@
 @section('content')
     <table class="table">
         <thead>
+        <th>ID</th>
         <th>Nombre</th>
         <th>Telefono</th>
         <th>Correo</th>
@@ -17,6 +18,8 @@
         </thead>
         @foreach($clients as $client)
             <tbody>
+            <td>{{$client->id}}</td>
+
             <td>{{$client->nombre, $client->ap_pat}} {{ $client->ap_pat}} {{ $client->ap_mat}}</td>
             <td>{{$client->tel}}</td>
             <td>{{$client->correo}}</td>
