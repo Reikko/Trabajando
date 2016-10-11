@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Session;
 use Redirect;
 use azf\Edo;
+use azf\Fracc;
 use azf;
 use azf\Colonia;
 use Illuminate\Http\Request;
@@ -21,8 +22,6 @@ class ColControll extends Controller
      */
     public function index()
     {
-        //$colonias = Colonia::All();
-
         $colonias = DB::table('colonias')
             ->join('edos', 'colonias.id_edo', '=', 'edos.id')->get();
         return view('col_carpet.index',compact('colonias'));
@@ -106,4 +105,23 @@ class ColControll extends Controller
         Session::flash('message','Colonia eliminada correctamente');
         return Redirect::to('/colonias');
     }
+
+    public function getFraccion(Request $request,$id)
+    {
+        if($request -> ajax())
+        {
+            $fracs = Fracc::fracciones($id);
+            return response()->json($fracs);
+        }
+    }
+
+    public function getEditFraccion(Request $request,$col,$id)
+    {
+        if($request -> ajax())
+        {
+            $colons = Colonia::colonias($id);
+            return response()->json($colons);
+        }
+    }
+
 }

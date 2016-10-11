@@ -38,8 +38,6 @@
                         <ul class="dropdown-menu">
                             <li>{!!link_to_route('edo.index', $title = 'Mostrar Estados')!!}</li>
                             <li>{!!link_to_route('edo.create', $title = 'Agregar Estado')!!}</li>
-                            <li><a href="#">Page 1-2</a></li>
-                            <li><a href="#">Page 1-3</a></li>
                         </ul>
                     </li>
 
@@ -48,8 +46,7 @@
                         <ul class="dropdown-menu">
                             <li>{!!link_to_route('colonias.index', $title = 'Mostrar Colonia')!!}</li>
                             <li>{!!link_to_route('colonias.create', $title = 'Crear Colonia')!!}</li>
-                            <li><a href="#">Page 1-2</a></li>
-                            <li><a href="#">Page 1-3</a></li>
+
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -57,6 +54,13 @@
                         <ul class="dropdown-menu">
                             <li>{!!link_to_route('fr.index', $title = 'Mostrar Fraccionamiento')!!}</li>
                             <li>{!!link_to_route('fr.create', $title = 'Crear Fraccionamiento')!!}</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/">Calle/Edificio<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>{!!link_to_route('calle.index', $title = 'Mostrar Calle o Edificio')!!}</li>
+                            <li>{!!link_to_route('calle.create', $title = 'Crear Calle o Edificio')!!}</li>
                             <li><a href="#">Page 1-2</a></li>
                             <li><a href="#">Page 1-3</a></li>
                         </ul>
@@ -66,8 +70,6 @@
                         <ul class="dropdown-menu">
                             <li>{!!link_to_route('cliente.index', $title = 'Mostrar Clientes')!!}</li>
                             <li>{!!link_to_route('cliente.create', $title = 'Crear Cliente')!!}</li>
-                            <li><a href="#">Page 1-2</a></li>
-                            <li><a href="#">Page 1-3</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Page 2</a></li>
@@ -98,7 +100,7 @@
 
                 <div class="col-sm-6">
                     @yield('content')
-                    {!!Html::script('js/drop.js')!!}
+
                 </div>
 
                 <div class="col-sm-3" style="background-color:lavender;">
@@ -122,7 +124,7 @@
 
 <!-- Latest compiled and minified JavaScript -->
 
-
+{!!Html::script('js/drop.js')!!}
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

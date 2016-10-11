@@ -31,6 +31,15 @@ class EdoController extends Controller
         }
     }
 
+    public function getEditColonias(Request $request,$col,$id)
+    {
+        if($request -> ajax())
+        {
+            $colons = Colonia::colonias($id);
+            return response()->json($colons);
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *

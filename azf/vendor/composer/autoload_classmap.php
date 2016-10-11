@@ -7,14 +7,13 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreateCalleEdifsTable' => $baseDir . '/database/migrations/2016_10_05_164001_create_calle_edifs_table.php',
+    'CreateCallesTable' => $baseDir . '/database/migrations/2016_10_10_143130_create_calles_table.php',
     'CreateClientesTable' => $baseDir . '/database/migrations/2016_10_05_164900_create_clientes_table.php',
     'CreateColoniasTable' => $baseDir . '/database/migrations/2016_09_30_140020_create_colonias_table.php',
     'CreateEdosTable' => $baseDir . '/database/migrations/2016_09_30_140015_create_edos_table.php',
     'CreateFraccsTable' => $baseDir . '/database/migrations/2016_09_30_140047_create_fraccs_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-    'CreatePropiedadesTable' => $baseDir . '/database/migrations/2016_09_30_100956_create_propiedades_table.php',
     'CreatePropiedadsTable' => $baseDir . '/database/migrations/2016_10_05_165827_create_propiedads_table.php',
-    'CreatePropietariosTable' => $baseDir . '/database/migrations/2016_09_30_101938_create_propietarios_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

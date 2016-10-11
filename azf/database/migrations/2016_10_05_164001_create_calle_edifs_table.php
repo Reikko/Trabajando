@@ -18,6 +18,7 @@ class CreateCalleEdifsTable extends Migration
             $table->integer('id_fra')->unsigned();
             $table->foreign('id_fra')->references('id')->on('fraccs')->onDelete('cascade')->onUpdate('cascade');
             $table->string('nom_calle');
+            $table->string('num_ext');
             $table->timestamps();
         });
     }

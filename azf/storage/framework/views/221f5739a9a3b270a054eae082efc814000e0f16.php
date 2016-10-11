@@ -18,7 +18,7 @@
         <?php foreach($clients as $client): ?>
             <tbody>
             <td><?php echo e($client->id); ?></td>
-            
+
             <td><?php echo e($client->nombre, $client->ap_pat); ?> <?php echo e($client->ap_pat); ?> <?php echo e($client->ap_mat); ?></td>
             <td><?php echo e($client->tel); ?></td>
             <td><?php echo e($client->correo); ?></td>

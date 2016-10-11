@@ -1,6 +1,8 @@
 $("#estado_sel").change(function ( event) {
-    $.get("towns/"+event.target.value+"",function(response,state){
-        $("#colony_sel").empty();
+    $.get("estado/"+event.target.value+"",function(response,state){
+        console.log(event);
+        $("#colony_sel").empty(response);
+        $("#frany_sel").empty(response);
         for(i=0 ; i<response.length;i++)
         {
             $("#colony_sel").append("<option value = \""+response[i].id+"\"> "+response[i].nom_col+"</option>");
@@ -8,12 +10,17 @@ $("#estado_sel").change(function ( event) {
     });
 });
 
-$("#estado_sel").change(function ( event) {
-    $.get("towns/"+event.target.value+"",function(response,state){
-        $("#colony_sel").empty();
+$("#colony_sel").change(function ( event) {
+    $.get("col/"+event.target.value+"",function(response,state){
+        console.log(event);
+        $("#frany_sel").empty(response);
         for(i=0 ; i<response.length;i++)
         {
-            $("#colony_sel").append("<option value = \""+response[i].id+"\"> "+response[i].nom_col+"</option>");
+            $("#frany_sel").append("<option value = \""+response[i].id+"\"> "+response[i].nom_frac+"</option>");
         }
     });
 });
+
+
+
+
